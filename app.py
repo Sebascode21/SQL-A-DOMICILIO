@@ -122,19 +122,19 @@ with tab4:
             st.warning("No entregas parecidas a la tuya.")  
             st.stop()
 
-precio= parecidos["total"].median()
-mediana_precio=carta["total"].median()
+    precio= parecidos["total"].median()
+    mediana_precio=carta["total"].median()
 
-st.metric("pedidos como el tuyo", len(parecidos))
-st.metric("mediana total de los pedidos parecidos",int(precio))
-st.metric("mediana de todos los pedidos",int(mediana_precio))
+    st.metric("pedidos como el tuyo", len(parecidos))
+    st.metric("mediana total de los pedidos parecidos",int(precio))
+    st.metric("mediana de todos los pedidos",int(mediana_precio))
 
 
 
-if precio >= mediana_precio:  
-    st.success("¡Tu pedido está entre los caros!")  
-else:
-    st.error("Tu pedido está entre los baratos.") 
+    if precio >= mediana_precio:  
+        st.success("¡Tu pedido está entre los caros!")  
+    else:
+        st.error("Tu pedido está entre los baratos.") 
 
-st.subheader("pedidos parecidos al tuyo")
-st.dataframe(parecidos) 
+    st.subheader("pedidos parecidos al tuyo")
+    st.dataframe(parecidos) 
